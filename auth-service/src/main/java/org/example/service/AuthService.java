@@ -25,7 +25,7 @@ public class AuthService extends ServiceManager<Auth, Long> {
 
         Auth auth = IAuthMapper.INSTANCE.toAuth(dto);
         save(auth);
-
+        // iki microservis arası haberleşme sağlandı
         userManager.create(IAuthMapper.INSTANCE.toNewCreateUserDto(auth));
 
         return auth;
